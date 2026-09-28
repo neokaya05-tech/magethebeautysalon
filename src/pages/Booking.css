@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Booking Page Styles & Theme Variables
+   ========================================================================== */
+
+:root {
+  /* Light Mode Palette */
+  --bg-primary: #fdfbf7;
+  --bg-card: #ffffff;
+  --bg-input: #f4f0eb;
+  --border-color: #e2d9cf;
+  --text-primary: #1f1917;
+  --text-secondary: #655b54;
+  --text-placeholder: #9c9087;
+  --accent-color: #c88a80;
+  --accent-hover: #b5776d;
+  --accent-text: #ffffff;
+  --error-bg: #fee2e2;
+  --error-text: #991b1b;
+  --success-bg: #f0fdf4;
+  --success-text: #166534;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"],
+.dark,
+body.dark-mode {
+  /* Dark Mode Palette */
+  --bg-primary: #161312;
+  --bg-card: #221d1b;
+  --bg-input: #2d2725;
+  --border-color: #3e3633;
+  --text-primary: #f8f6f4;
+  --text-secondary: #baada3;
+  --text-placeholder: #73675e;
+  --accent-color: #d89b91;
+  --accent-hover: #c88a80;
+  --accent-text: #161312;
+  --error-bg: #450a0a;
+  --error-text: #fca5a5;
+  --success-bg: #052e16;
+  --success-text: #86efac;
+  --shadow-sm: 0 4px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Base Page Layout */
+.booking-page {
+  min-height: 85vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 4rem 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-page .container {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Headers */
+.booking-title {
+  font-family: 'Playfair Display', serif, Georgia;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.booking-subtitle {
+  text-align: left;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* Card Container & Form Structure */
+.booking-form {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Form Controls & Labels */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* Inputs, Selects, & Textarea Styling */
+.booking-form input[type="text"],
+.booking-form input[type="tel"],
+.booking-form input[type="email"],
+.booking-form input[type="date"],
+.booking-form input[type="time"],
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-input) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  color: var(--text-primary) !important;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  color-scheme: dark light;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: var(--text-placeholder) !important;
+  opacity: 0.8;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 3px rgba(216, 155, 145, 0.2);
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 110px;
+  font-family: inherit;
+}
+
+.booking-form select option {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* Radio Button Method Toggle Box */
+.channel-toggle-group {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0.5rem 0 0.5rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.channel-toggle-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.booking-form input[type="radio"] {
+  accent-color: var(--accent-color);
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.btn-submit-booking {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit-booking:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-submit-booking:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Success Card */
+.booking-success-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking-success-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.booking-success-card p {
+  color: var(--text-secondary);
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.btn-reset {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-reset:hover {
+  background-color: var(--bg-input);
+}
+
+/* Responsive Scaling */
+@media (max-width: 640px) {
+  .booking-form {
+    padding: 1.5rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .booking-title {
+    font-size: 2rem;
+  }
+}
+
+.booking-form, 
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.btn-submit {
+  width: 100%;
+  min-height: 48px; /* Comfortable touch target for mobile */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}

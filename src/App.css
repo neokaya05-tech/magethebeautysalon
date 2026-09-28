@@ -1,0 +1,174 @@
+/* Custom CSS Variables */
+:root {
+  --bg-primary: #FAF7F5;
+  --bg-card: #FFFFFF;
+  --bg-banner: #F5EAE6;
+  --text-primary: #2C2623;
+  --text-muted: #8C7A6B;
+  --border-color: #E8E1DA;
+  --accent-color: #A66E74;
+}
+
+[data-theme="dark"], 
+.dark, 
+body.dark-mode {
+  --bg-primary: #1A1615;
+  --bg-card: #282220;
+  --bg-banner: #342B28;
+  --text-primary: #FAF7F5;
+  --text-muted: #D1C5BC;
+  --border-color: #423734;
+  --accent-color: #C88D93;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Force Dark Mode Overrides for Tailwind/Inline Light Containers */
+.dark .bg-white,
+body.dark-mode .bg-white,
+.dark [class*="bg-["],
+body.dark-mode [class*="bg-["] {
+  background-color: var(--bg-card) !important;
+}
+
+/* Fix Hero/Banner Light Sections (About Header, Testimonials, Map Banner) */
+.dark section,
+body.dark-mode section,
+.dark div[class*="bg-amber"],
+body.dark-mode div[class*="bg-amber"],
+.dark div[class*="bg-stone"],
+body.dark-mode div[class*="bg-stone"],
+.dark div[class*="bg-neutral"],
+body.dark-mode div[class*="bg-neutral"],
+.dark div[class*="bg-gray"],
+body.dark-mode div[class*="bg-gray"] {
+  background-color: var(--bg-banner) !important;
+}
+
+/* Force Readable Text Colors on Light-turned-Dark Elements */
+.dark h1, body.dark-mode h1,
+.dark h2, body.dark-mode h2,
+.dark h3, body.dark-mode h3,
+.dark h4, body.dark-mode h4,
+.dark h5, body.dark-mode h5,
+.dark h6, body.dark-mode h6,
+.dark .text-gray-900, body.dark-mode .text-gray-900,
+.dark .text-gray-800, body.dark-mode .text-gray-800,
+.dark .text-gray-700, body.dark-mode .text-gray-700,
+.dark .text-stone-900, body.dark-mode .text-stone-900,
+.dark .text-black, body.dark-mode .text-black {
+  color: var(--text-primary) !important;
+}
+
+.dark p, body.dark-mode p,
+.dark span, body.dark-mode span,
+.dark label, body.dark-mode label,
+.dark .text-gray-600, body.dark-mode .text-gray-600,
+.dark .text-gray-500, body.dark-mode .text-gray-500,
+.dark .text-stone-600, body.dark-mode .text-stone-600 {
+  color: var(--text-muted) !important;
+}
+
+/* Form Controls Fix */
+.dark input, body.dark-mode input,
+.dark textarea, body.dark-mode textarea,
+.dark select, body.dark-mode select {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark input::placeholder, body.dark-mode input::placeholder,
+.dark textarea::placeholder, body.dark-mode textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+/* Prevent horizontal overflow scrolling on mobile */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Fluid Page Containers */
+.page-container, 
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .page-container, 
+  .section-container {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Flexible Grid for Services / Cards */
+.services-grid, 
+.features-grid,
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .services-grid, 
+  .features-grid,
+  .analytics-grid {
+    grid-template-columns: 1fr; /* Single full-width column on narrow screens */
+    gap: 1rem;
+  }
+}
+
+/* Default Dark Theme */
+:root,
+[data-theme='dark'] {
+  --bg-primary: #120e0c;
+  --bg-secondary: #1c1613;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --accent-color: #e5a995;
+  --card-bg: #1e1815;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Theme Overrides */
+[data-theme='light'] {
+  --bg-primary: #fdfbf7;
+  --bg-secondary: #f3eee8;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --accent-color: #c87a63;
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Apply Variables to Body & Main Container */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Example usage on cards & containers */
+.card, .table-wrapper, .modal-content {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}

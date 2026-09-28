@@ -1,0 +1,177 @@
+.services-page {
+  padding-bottom: 5rem;
+}
+
+.services-page-header {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.services-page-title {
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.services-page-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* Tabs */
+.services-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.75rem 0.5rem;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+/* Category Content */
+.category-header {
+  margin-bottom: 2.5rem;
+}
+
+.category-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.category-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Grid & Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-item-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+}
+
+.service-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  min-height: 2.6rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.btn-book-sm {
+  padding: 0.4rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+/* Bottom Banner */
+.enquiry-banner {
+  background-color: var(--bg-surface-hover);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+}
+
+.enquiry-banner h3 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.enquiry-banner p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .enquiry-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}

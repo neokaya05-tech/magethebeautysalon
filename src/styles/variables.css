@@ -1,0 +1,39 @@
+:root {
+  /* Font Families */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Color System — Light Theme */
+  --bg-main: #FAF7F2;          /* Warm Ivory */
+  --bg-surface: #F4EBE1;       /* Soft Blush / Cream */
+  --bg-surface-hover: #EBE0D3; 
+  --text-primary: #2B211E;     /* Deep Brown */
+  --text-secondary: #6E635F;   /* Warm Grey */
+  --primary: #9C6B74;          /* Dusty Rose / Mauve */
+  --primary-hover: #85555E;
+  --accent: #B08B59;           /* Muted Bronze */
+  --border-color: #E2D7CC;
+  --shadow-sm: 0 2px 8px rgba(43, 33, 30, 0.04);
+  --shadow-md: 0 6px 20px rgba(43, 33, 30, 0.08);
+
+  /* Layout & Transitions */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --max-width: 1280px;
+}
+
+[data-theme='dark'] {
+  --bg-main: #181210;          /* Deep Espresso */
+  --bg-surface: #261D1A;       /* Dark Brown / Plum */
+  --bg-surface-hover: #332723;
+  --text-primary: #FAF7F2;     /* Warm Ivory */
+  --text-secondary: #C4B9B4;   /* Muted Beige */
+  --primary: #D49B99;          /* Muted Rose */
+  --primary-hover: #E3B0AE;
+  --accent: #E5C396;           /* Soft Champagne */
+  --border-color: #382B27;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,184 @@
+/* Base Desktop Styles */
+.navbar {
+  width: 100%;
+  background-color: #120e0c; /* Dark background matching your theme */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.nav-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo span {
+  font-size: 0.65rem;
+  color: #e5a995; /* Soft rose accent */
+  letter-spacing: 2px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-btn {
+  background-color: #e5a995;
+  color: #120e0c;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #d89681;
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger .bar {
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Breakpoint (768px and down) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Transform Hamburger to X when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Slide-down Mobile Drawer */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #120e0c;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Smooth slide down effect */
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .nav-btn-item {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Theme Toggle Button Styling */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-actions-mobile {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Responsive Mobile Display */
+@media (max-width: 768px) {
+  .nav-actions-mobile {
+    display: flex; /* Displays theme button next to hamburger on mobile */
+  }
+
+  .theme-toggle-desktop {
+    display: none; /* Hide duplicate desktop toggle in mobile drawer */
+  }
+}
