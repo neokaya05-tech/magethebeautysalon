@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import Modal from '../components/Modal'
-import './AdminLogin.css'
+import './Adminlogin.css'
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('')
